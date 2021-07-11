@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 02</title>
+  </head>
+  <body>
+    <h1>Score List</h1>
+    <p>Please Click "Enter" To Input Score.</p>
+    <p id="practice"></p>
+    <button onclick="myTest()">Enter</button>
+    <script>
+      function myTest() {
+        var text;
+        var total, average;
+
+        var score1 = parseFloat(prompt("Enter Score1: "));
+        var score2 = parseFloat(prompt("Enter Score2: "));
+        var score3 = parseFloat(prompt("Enter Score3: "));
+        var score4 = parseFloat(prompt("Enter Score4: "));
+        var score5 = parseFloat(prompt("Enter Score5: "));
+
+        alert("Score1: " + score1 + "\n" + "Score2: " + score2 + "\n" + "Score3: " + score3 + "\n" + "Score4: " + score4 + "\n" + "Score5: " + score5);
+        total = score1 + score2 + score3 + score4 + score5;
+        average = total / 5;
+
+        alert("Total: " + total + "\n" + "Average: " + average);
+      }
+
+      document.getElementById("practice").innerHTML = text;
+    </script>
+  </body>
+</html>

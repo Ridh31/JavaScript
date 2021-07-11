@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 03</title>
+  </head>
+  <body>
+    <h1>Welcome To Ridh's Shop!</h1>
+    <p>Click "Purchase" To Input Product.</p>
+    <p id="practice"></p>
+    <button onclick="myPractice()">Purchase</button>
+
+    <script>
+      function myPractice() {
+        var text;
+        var total, payment;
+
+        var code = parseInt(prompt("Enter Code: "));
+        var name = prompt("Enter Name: ");
+        var qty = parseInt(prompt("Enter QTY: "));
+        var price = prompt("Enter Price: ");
+        var discount = parseInt(prompt("Enter Discount: "));
+
+        alert("Code: " + code + "\n" + "Name" + name + "\n" + "QTY: " + qty + "\n" + "Price: " + price + "\n" + "Discount: " + discount);
+
+        total = qty * price;
+        payment = (discount * price) / 100;
+
+        alert("Total: " + total + "\n" + "Payment (After discount): " + payment);
+      }
+      document.getElementById("practice").innerHTML = text;
+    </script>
+  </body>
+</html>

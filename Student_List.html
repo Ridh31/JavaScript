@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 1</title>
+  </head>
+  <body>
+    <h1>Student List</h1>
+    <p>Please Click "Enter" To Input Student's Data.</p>
+    <p id="test"></p>
+    <button onclick="myExerxise()">Enter</button>
+
+    <script>
+      function myExerxise() {
+        var text;
+        var id = prompt("Enter ID: ");
+        var name = prompt("Enter Name: ");
+        var sex = prompt("Enter Sex: ");
+        var score = parseFloat(prompt("Enter Score: "));
+
+        alert("ID: " + id + "\n" + "Name: " + name + "\n" + "Sex: " + sex + "\n" + "Score: " + score);
+      }
+      document.getElementById("test").innerHTML = text;
+    </script>
+  </body>
+</html>
