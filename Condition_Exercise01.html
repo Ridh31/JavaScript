@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 1</title>
+  </head>
+  <body>
+    <script>
+      var text;
+      var code, name, qty, price;
+      var total, payment, discount;
+      code = parseInt(prompt("Enter Code: "));
+      name = prompt("Enter Name: ");
+      qty = parseInt(prompt("Enter Quantity: "));
+      price = prompt("Enter Price: $");
+
+      total = price * qty;
+      // Codition
+      if (total == 1 && total == 10) discount = total * 0.1;
+      else if (total == 10 && total == 20) discount = total * 0.2;
+      else if (total == 20 && total == 30) discount = total * 0.3;
+      else if (total == 30 && total == 40) discount = total * 0.4;
+      else if (total == 40 && total == 50) discount = total * 0.5;
+      else if (total == 50 && total == 60) discount = total * 0.6;
+      else discount = total * 0.7;
+
+      payment = total - discount;
+
+      alert("Code: " + code + "\n" + "Name: " + name + "Quantity" + qty + "\n" + "Price: $" + price + "\n" + "Total: $" + total + "\n" + "Discount: " + discount + "%" + "\n" + "Payment: $" + payment);
+    </script>
+  </body>
+</html>
