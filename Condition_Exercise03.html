@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Example 3</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>Employee</h1>
+    <p id="getGender"></p>
     <script>
-      // Declare
-      var id, name, sex, salary;
-      var bonus;
+        // Declare
+        var id, name, sex, salary;
+        var bonus;
 
-      // Input
-      id = prompt("Enter ID: ");
-      name = prompt("Enter Name: ");
-      sex = prompt("Enter Gender: ");
-      salary = parseFloat(prompt("Enter Salary: "));
-      // Condition
-      if (salary == 100 && salary == 1000 && sex == "F" && sex == "Female") bonus = salary * 0.2;
-      else if (salary == 100 && salary == 1000 && sex == "M" && sex == "Male") bonus = salary * 0.15;
+        // Input
+        // id = prompt("Enter ID: ");
+        // name = prompt("Enter Name: ");
+        // salary = 110  == 100%
+        //  bouns = x        20
+        // bouns = (110 * 20)/100 
+        // total = salary + bouns 
+        // total = 110 + ((110 * 20)/100) 
+        sex = prompt("Enter Gender: ", "M/F");
+        salary = parseFloat(prompt("Enter Salary: ", 0));
+        // Condition
+        if ((sex == "F" || sex == "Female" || sex == "f" || sex == "female") && salary >= 100) {
+            console.log("You are female");
+            document.getElementById("getGender").innerHTML = `You are ${sex}`;
 
-      // Output
-      alert("ID: " + id + "\n" + "Name: " + name + "Gender: " + sex + "\n" + "Salary: " + salary + "\n" + "Bonus: " + bonus);
+        } else {
+            document.getElementById("getGender").innerHTML = `Salary is below than 100$`;
+        }
+        // if (salary == 100 && salary == 1000 && sex == "F" && sex == "Female") bonus = salary * 0.2;
+        // else if (salary == 100 && salary == 1000 && sex == "M" && sex == "Male") bonus = salary * 0.15;
+
+        // Output
+        // alert("ID: " + id + "\n" + "Name: " + name + "Gender: " + sex + "\n" + "Salary: " + salary + "\n" + "Bonus: " + bonus);
     </script>
-  </body>
+</body>
+
 </html>
