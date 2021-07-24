@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Currecy Exchange</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <h2>Welcome To Currency Exchange (USD -> KHR)</h2>
 
     <p id="money"></p>
 
     <button onclick="toKHR()">Exchange</button>
     <script>
-      function toKHR() {
-        var text, khr;
-        var usd = parseFloat(prompt("Enter Your Amount: ", "$0"));
-        // Condition
-        if (usd >= 50) khr = usd * 4102;
-        else khr = usd * 4102;
-        alert("Your Currency Exchange is: " + khr + " KHR");
-        console.log("Your money has been exchange!");
-      }
-      document.getElementById("money").innerHTML = khr;
+        function toKHR() {
+            var text, khr;
+            var usd = parseFloat(prompt("Enter Your Amount: ", 0));
+            // Condition
+            if (usd >= 50) {
+                khr = usd * 4102;
+            } else {
+                khr = usd * 4000;
+            }
+            // alert("Your Currency Exchange is: " + khr + " KHR");
+            // console.log("Your money has been exchange!");
+
+            let formatKHR = new Intl.NumberFormat('en-GB', {
+                style: 'currency',
+                currency: 'KHR' // EUR: ALPHABETIC CODE // https://ourcodeworld.com/articles/read/1270/list-of-currency-codes-iso-4217-standard-for-javascript
+            }).format(khr);
+
+            document.getElementById("money").innerHTML = `${formatKHR}`;
+            // Out: 205,100 KHR 
+        }
+
+        const khr1 = 205100; // 20,510.00 KHR
+
+        // URL: https: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat
+        // Currency: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/numberingSystem
+        // https://www.w3schools.com/jsref/jsref_tolocalestring_number.asp
+        console.log(new Intl.NumberFormat('en-GB', {
+            style: 'currency',
+            currency: 'KHR' // EUR: ALPHABETIC CODE // https://ourcodeworld.com/articles/read/1270/list-of-currency-codes-iso-4217-standard-for-javascript
+        }).format(khr1));
     </script>
-  </body>
+</body>
+
 </html>
