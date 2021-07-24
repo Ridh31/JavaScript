@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Currecy Exchange</title>
+  </head>
+  <body>
+    <h2>Welcome To Currency Exchange (USD -> KHR)</h2>
+
+    <p id="money"></p>
+
+    <button onclick="toKHR()">Exchange</button>
+    <script>
+      function toKHR() {
+        var text;
+        var usd = parseInt(prompt("Enter Your Amount: (USD)"));
+        // Condition
+        if (usd >= 1 && usd <= 50) {
+          khr = usd * 4000;
+        } else khr = usd * 4102;
+        alert("Your Currency Exchange is: " + khr);
+      }
+      document.getElementById("money").innerHTML = text;
+    </script>
+  </body>
+</html>
