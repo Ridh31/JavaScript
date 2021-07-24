@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Loop Exercise 1</title>
+  </head>
+  <body>
+    <h2>Sum of Odd Number</h2>
+    <p id="demo"></p>
+    <script>
+      var i, n, sum;
+      sum = 0;
+      n = parseInt(prompt("Enter n value: "));
+
+      for (i = 3; i <= n; i++) {
+        if (i % 2 != 0) {
+          sum += i;
+          document.write(i + " +" + "\t");
+        }
+      }
+      document.getElementById("demo").innerHTML = "Sum of this loop is: " + sum;
+    </script>
+  </body>
+</html>
