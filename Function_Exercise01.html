@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Function & Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Freehand&display=swap" rel="stylesheet" />
+    <style>
+      .khFont {
+        font-family: "Freehand", cursive;
+      }
+      table,
+      td,
+      th {
+        border: 1px solid #ddd;
+        text-align: left;
+        padding: 10px;
+        font-size: x-large;
+      }
+      table {
+        border-collapse: collapse;
+        width: 50%;
+      }
+      .bgColor1 {
+        background-color: #faebd7;
+      }
+      .bgColor2 {
+        background-color: #a9a9a9;
+        color: #ffffff;
+      }
+      .myButton {
+        background-color: #7fffd4;
+        color: #000000;
+        border: 5px solid #000000;
+        padding: 10px;
+        font-size: larger;
+      }
+      .myButton:hover {
+        background-color: #dc143c;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" class="khFont" id="myTable">
+      <tr>
+        <td class="bgColor1">លេខរៀង</td>
+        <td class="bgColor1">តម្លៃបូក</td>
+        <td class="bgColor1">តម្លៃគុណ</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td id="a1"></td>
+        <td id="b1"></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td id="a2"></td>
+        <td id="b2"></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td id="a3"></td>
+        <td id="b3"></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td id="a4"></td>
+        <td id="b4"></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td class="bgColor2" id="sum1"></td>
+        <td class="bgColor2" id="sum2"></td>
+      </tr>
+    </table>
+    <br />
+    <button onclick="myFunction()" class="myButton">Enter Value</button>
+    <script>
+      function myFunction() {
+        var n1 = parseFloat(prompt("Enter number 2nd column (Add+): ", 0));
+        var n2 = parseFloat(prompt("Enter number 2nd column (Add+): ", 0));
+        var n3 = parseFloat(prompt("Enter number 2nd column (Add+): ", 0));
+        var n4 = parseFloat(prompt("Enter number 2nd column (Add+): ", 0));
+        var n5 = parseFloat(prompt("Enter number 3rd column (Multiply*): ", 0));
+        var n6 = parseFloat(prompt("Enter number 3rd column (Multiply*): (Multiply*): ", 0));
+        var n7 = parseFloat(prompt("Enter number 3rd column (Multiply*): (Multiply*): ", 0));
+        var n8 = parseFloat(prompt("Enter number 3rd column (Multiply*): (Multiply*): ", 0));
+        const sum1 = n1 + n2 + n3 + n4;
+        const sum2 = n5 * n6 * n7 * n8;
+        document.getElementById("a1").innerHTML = n1;
+        document.getElementById("a2").innerHTML = n2;
+        document.getElementById("a3").innerHTML = n3;
+        document.getElementById("a4").innerHTML = n4;
+        document.getElementById("b1").innerHTML = n5;
+        document.getElementById("b2").innerHTML = n6;
+        document.getElementById("b3").innerHTML = n7;
+        document.getElementById("b4").innerHTML = n8;
+        document.getElementById("sum1").innerHTML = sum1;
+        document.getElementById("sum2").innerHTML = sum2;
+      }
+    </script>
+  </body>
+</html>
