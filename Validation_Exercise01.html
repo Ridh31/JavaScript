@@ -35,16 +35,17 @@
         var enter_Name = document.forms["myForm"]["myName"].value;
         var enter_Email = document.forms["myForm"]["myEmail"].value;
         var enter_Tel = document.forms["myForm"]["myTel"].value;
+        var enter_Textarea = document.forms["myForm"]["ta"].value;
 
         var required_Name = /^[A-Za-z]+$/;
-        var required_Email = /0-9a-z@^+$/;
-        var required_Tel = /^[0-9]+$/;
+        //  var required_Email = /0-9a-z@^+$/;
+        //  var required_Tel = /^[0-9]+$/;
 
-        if (enter_Name == "") {
-          alert("You have entered your name!");
+        if (enter_Name == "" || enter_Email == "" || enter_Tel == "" || enter_Textarea == "") {
+          alert("Your information is not complete!" + "\n" + "Please enter your informaton.");
           return true;
         } else {
-          alert("Your name is invalid! Please enter your name agian.");
+          alert("Your information is complete.");
           return false;
         }
 
@@ -76,15 +77,15 @@
   </head>
 
   <body>
-    <form action="" id="myForm" onsubmit="return myFunction()" method="post">
+    <form name="myForm" onsubmit="return myFunction()">
       <h3><i>Provide your information</i></h3>
       <hr />
 
       Name<span>*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="text" name="myName" id="myName" required /><br /><br />
+      <input type="text" name="myName" id="myName" /><br /><br />
 
       Email<span>*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="email" name="myEmail" id="myEmail" required /><br /><br />
+      <input type="email" name="myEmail" id="myEmail" /><br /><br />
       Telephone&nbsp;&nbsp;&nbsp;
       <input type="tel" name="myTel" id="myTel" /> <br /><br />
 
