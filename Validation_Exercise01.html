@@ -38,8 +38,8 @@
         var enter_Textarea = document.forms["myForm"]["ta"].value;
 
         var required_Name = /^[A-Za-z]+$/;
-        //  var required_Email = /0-9a-z@^+$/;
-        //  var required_Tel = /^[0-9]+$/;
+        var required_Email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var required_Tel = /^[0-9]+$/;
 
         if (enter_Name == "" || enter_Email == "" || enter_Tel == "" || enter_Textarea == "") {
           alert("Your information is not complete!" + "\n" + "Please enter your informaton.");
@@ -49,7 +49,7 @@
           return false;
         }
 
-        if (enter_Name.match(required_Name)) {
+        if (!enter_Name.match(required_Name)) {
           document.getElementById("dis").innerHTML = "You have entered your name!";
           return true;
         } else {
@@ -57,19 +57,19 @@
           return false;
         }
 
-        if (enter_Email.match(required_Email)) {
-          document.getElementById("dis").innerHTML = "You have entered your email!";
+        if (!enter_Email.match(required_Email)) {
+          document.getElementById("dis1").innerHTML = "You have entered your email!";
           return true;
         } else {
-          document.getElementById("dis").innerHTML = "Your email is invalid!";
+          document.getElementById("dis1").innerHTML = "Your email is invalid!";
           return false;
         }
 
-        if (enter_Tel.match(required_Tel)) {
-          document.getElementById("dis").innerHTML = "You have entered your number!";
+        if (!enter_Tel.match(required_Tel)) {
+          document.getElementById("dis2").innerHTML = "You have entered your number!";
           return true;
         } else {
-          document.getElementById("dis").innerHTML = "Your email is invalid!";
+          document.getElementById("dis2").innerHTML = "Your email is invalid!";
           return false;
         }
       }
@@ -102,6 +102,8 @@
       <input class="mybutton" type="submit" value="Submit" />
 
       <p id="dis"></p>
+      <p id="dis1"></p>
+      <p id="dis2"></p>
     </form>
   </body>
 </html>
