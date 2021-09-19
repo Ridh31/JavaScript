@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Form Validation" />
     <title>Form Validation</title>
     <style>
-        span {
-            color: #ff0000;
-        }
-        
-        .mybutton {
-            background-color: #ffa500;
-            border: 4px solid #ffa500;
-            color: #ffffff;
-            margin-left: 79px;
-            border-radius: 3px;
-        }
-        
-        form {
-            padding: 6px;
-        }
-        
-        .myTA {
-            vertical-align: top;
-        }
-        
-        select {
-            width: 165px;
-            height: 23px;
-        }
+      span {
+        color: #ff0000;
+      }
+
+      .mybutton {
+        background-color: #ffa500;
+        border: 4px solid #ffa500;
+        color: #ffffff;
+        margin-left: 79px;
+        border-radius: 3px;
+      }
+
+      form {
+        padding: 6px;
+      }
+
+      .myTA {
+        vertical-align: top;
+      }
+
+      select {
+        width: 165px;
+        height: 23px;
+      }
     </style>
     <script>
-        function myFunction() {
-            var enter_Name = document.forms["myForm"]["myName"].value;
-            var enter_Email = document.forms["myForm"]["myEmail"].value;
-            var enter_Tel = document.forms["myForm"]["myTel"].value;
-            var enter_Textarea = document.forms["myForm"]["ta"].value;
+      function myFunction() {
+        var enter_Name = document.forms["myForm"]["myName"].value;
+        var enter_Email = document.forms["myForm"]["myEmail"].value;
+        var enter_Tel = document.forms["myForm"]["myTel"].value;
+        var enter_Textarea = document.forms["myForm"]["ta"].value;
 
-            var required_Name = /^[A-Za-z]+$/;
-            var required_Email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            var required_Tel = /^[0-9]+$/;
+        var required_Name = /^[A-Za-z]+$/;
+        var required_Email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var required_Tel = /^[0-9]+$/;
 
-            if (enter_Name == "" || enter_Email == "" || enter_Textarea == "") {
-                alert("Sorry, your information is not complete!" + "\n" + "Please enter your informaton.");
-                return false;
-            }
-
-            if (!enter_Name.match(required_Name)) {
-                document.getElementById("dis").innerHTML = "You have entered your name!";
-                return false;
-            }
-
-            if (!enter_Email.match(required_Email)) {
-                document.getElementById("dis1").innerHTML = "Invalid Email";
-                return false;
-            }
-
-            if (!enter_Tel.match(required_Tel)) {
-                document.getElementById("dis2").innerHTML = "You have entered your number!";
-                return true;
-            } else {
-                document.getElementById("dis2").innerHTML = "Your email is invalid!";
-                return false;
-            }
+        if (enter_Name == "" || enter_Email == "" || enter_Textarea == "") {
+          alert("Sorry, your information is not complete!" + "\n" + "Please enter your informaton.");
+          return false;
         }
+
+        if (!enter_Name.match(required_Name)) {
+          document.getElementById("test").innerHTML = "You have entered your name!";
+          return false;
+        }
+
+        if (!enter_Email.match(required_Email)) {
+          document.getElementById("test1").innerHTML = "Invalid Email";
+          return false;
+        }
+
+        if (!enter_Tel.match(required_Tel)) {
+          document.getElementById("test2").innerHTML = "You have entered your number!";
+          return true;
+        } else {
+          document.getElementById("test2").innerHTML = "Your email is invalid!";
+          return false;
+        }
+      }
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <form name="myForm" onsubmit="return myFunction()">
-        <h3><i>Provide your information</i></h3>
-        <hr /> Name
+      <h3><i>Provide your information</i></h3>
+      <hr />
+      Name
 
-        <span>*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="myName" id="myName" /><br /><br /> Email
+      <span>*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="myName" id="myName" /><br /><br />
+      Email
 
-        <span>*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="email" name="myEmail" id="myEmail" /><br /><br /> Telephone&nbsp;&nbsp;&nbsp;
-        <input type="tel" name="myTel" id="myTel" /> <br /><br /> Regarding&nbsp;&nbsp;&nbsp;
-        <select id="regard">
+      <span>*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="email" name="myEmail" id="myEmail" /><br /><br />
+      Telephone&nbsp;&nbsp;&nbsp; <input type="tel" name="myTel" id="myTel" /> <br /><br />
+      Regarding&nbsp;&nbsp;&nbsp;
+      <select id="regard">
         <option value="General" selected>General</option>
         <option value="HTML">HTML</option>
         <option value="CSS">CSS</option>
@@ -90,9 +90,9 @@
       >&nbsp;&nbsp;&nbsp;&nbsp; <textarea id="ta" name="ta" rows="6" cols="30"></textarea><br /><br />
       <input class="mybutton" type="submit" value="Submit" />
 
-      <p id="dis"></p>
-      <p id="dis1"></p>
-      <p id="dis2"></p>
+      <p id="test"></p>
+      <p id="test1"></p>
+      <p id="test2"></p>
     </form>
   </body>
 </html>
