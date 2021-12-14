@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Khmer Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Khmer&display=swap" rel="stylesheet" />
+
+    <script>
+      function myFunction() {
+        var total;
+
+        var name = prompt("Enter Your Name: ");
+        var id = prompt("Enter Your ID: ");
+        var amount = prompt("Enter Amount of Usage (kwh): ");
+        var waste = confirm("Do you want to include waste collection payment?");
+        trash = 0;
+        if (waste) {
+          trash = 4000;
+        }
+        if (amount >= 0 && amount < 100) {
+          total = amount * 1000;
+        } else if (amount >= 100 && amount < 150) {
+          total = amount * 1500;
+        } else if (amount >= 150 && amount < 200) {
+          total = amount * 2000;
+        } else if (amount >= 200 && amount < 250) {
+          total = amount * 2500;
+        } else {
+          total = amount * 1000;
+        }
+
+        alert("------------------------​-- ពត៌មានរបស់អ្នក --------------------------" + "\n" + "Customer Name: " + name + "\n" + "Customer ID: " + id + "\n" + "Amount of Usage: " + amount + " kwh" + "\n--> " + amount + "kwh = " + total + " Riel" + "\n--> " + "Waste Collection = " + trash + " Riel" + "\n---------------------​----- ថ្លៃភ្លើងរបស់អ្នក --------------------------\n" + ">>> Total: " + (total + trash) + " Riel" + "\nThank you!");
+      }
+    </script>
+
+    <title>អគ្គិសនីកម្ពុជា</title>
+    <style>
+      body {
+        background-color: pink;
+      }
+      .khmer-font {
+        font-family: "Khmer", cursive;
+      }
+      div {
+        background-color: silver;
+        border: 2px solid black;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        margin: 30px 500px 0px 500px;
+        padding: 30px;
+      }
+      h1 {
+        text-align: center;
+      }
+      h1:hover {
+        color: red;
+        cursor: pointer;
+      }
+      .input {
+        background-color: white;
+        padding: 20px;
+        border-radius: 6px;
+        font-size: 25px;
+        margin-left: 660px;
+        font-weight: bold;
+        box-shadow: 5px 5px;
+      }
+      .input:hover {
+        background-color: tomato;
+        cursor: pointer;
+      }
+      ul,
+      li {
+        display: inline-block;
+        border: 1px solid #333;
+        background-color: #333;
+        padding: 10px 80px 10px 80px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      li:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div><h1 class="khmer-font pt-3">ស្វាគមន៏មកកាន់អគ្គិសនីកម្ពុជា</h1></div>
+    <nav>
+      <ul>
+        <li class="khmer-font">ទំព័រដើម</li>
+        <li class="khmer-font">ពត៌មានថ្មីៗ</li>
+        <li class="khmer-font">បច្ចេកទេស</li>
+        <li class="khmer-font">សេវាកម្ម</li>
+        <li class="khmer-font">ទំនាក់ទំនង</li>
+      </ul>
+    </nav>
+
+    <input class="input khmer-font" type="button" value="គណនាថ្លៃភ្លើង" onclick="myFunction()" />
+  </body>
+</html>
